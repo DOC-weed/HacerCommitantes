@@ -7,6 +7,7 @@
         <div id="admin" class="admin1">
         <ion-input [(ngModel)]="usuAdmin" placeholder="Correo" ></ion-input>
         <ion-input type="password" [(ngModel)]="passAdmin" placeholder="Contraseña"></ion-input>
+        <br>
         <ion-button (click)="inicioAdmin(usuAdmin, passAdmin)">Ingresar</ion-button>
         </div>
     </ion-item>
@@ -15,6 +16,7 @@
         <div id="cliente" class="cliente1">
         <ion-input [(ngModel)]="usuClient" placeholder="Correo"></ion-input>
         <ion-input type="password" [(ngModel)]="passClient" placeholder="Contraseña"></ion-input>
+        <br>
         <ion-button (click)="inicioCliente(usuClient, passClient)">Ingresar</ion-button>
         </div>
     </ion-item>
