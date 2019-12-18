@@ -10,8 +10,14 @@ import {ModalController} from "@ionic/angular";
 export class ProfilePage implements OnInit {
 
   constructor(private ModCtrl: ModalController) { }
-
+  email;
+  pass;
   ngOnInit() {
+  	this.getdatos();
+  }
+  getdatos() {
+  	this.email=localStorage.getItem('correo');
+  	this.pass=localStorage.getItem('pass');
   }
 
 }

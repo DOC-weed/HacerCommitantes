@@ -105,5 +105,8 @@ export class AltasPage {
         }
     );
   }
+  close() {
+    this.ModCtrl.dismiss();
+  }
 
 }

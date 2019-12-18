@@ -26,7 +26,7 @@
                     <ion-menu-button></ion-menu-button>
                 </ion-buttons>
                 <ion-title>Sales</ion-title>
-                <ion-button (click)="LeerCode()"><ion-icon name="scanner"></ion-icon></ion-button>
+               <ion-buttons slot="end"><ion-button (click)="LeerCode()"><ion-icon name="camera"></ion-icon></ion-button></ion-buttons>
             </ion-toolbar>
             <ion-searchbar (ionChange)="search($event)" animated></ion-searchbar>
         </ion-header>
@@ -54,8 +54,9 @@
                             <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
                         </div>
                         <div class="col-3">
-                            <ion-input [(ngModel)]="canti" type="number"></ion-input>
-                            <ion-button (click)="in(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">Agregar al carrito</ion-button>
+                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
                         </div>
                     </ion-item>
             </ion-list>
@@ -76,9 +77,9 @@
                             <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
                         </div>
                         <div class="col-3">
-                            <ion-input [(ngModel)]="canti1" type="number"></ion-input>
-                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">Agregar al carrito</ion-button>
-                            <ion-button></ion-button>
+                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
                         </div>
                     </ion-item>
             </ion-list>
@@ -100,8 +101,9 @@
                             <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
                         </div>
                         <div class="col-3">
-                            <ion-input [(ngModel)]="canti2" type="number"></ion-input>
-                            <ion-button (click)="in2(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">Agregar al carrito</ion-button>
+                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
                         </div>
                     </ion-item>
             </ion-list>
@@ -122,8 +124,9 @@
                             <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
                         </div>
                         <div class="col-3">
-                            <ion-input [(ngModel)]="canti3" type="number"></ion-input>
-                            <ion-button (click)="in3(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">Agregar al carrito</ion-button>
+                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                                <ion-icon name="add"></ion-icon>
+                            </ion-button>
                         </div>
                     </ion-item>
             </ion-list>

@@ -29,6 +29,7 @@ import {AngularFireAuthModule} from "@angular/fire/auth";
 import {EditPageModule} from "./edit/edit/edit.module";
 import {AddprovPageModule} from "./addprov/addprov.module";
 import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
+import {PayPal} from "@ionic-native/paypal/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,7 +42,7 @@ import {BarcodeScanner} from "@ionic-native/barcode-scanner/ngx";
     CarritoService,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, BarcodeScanner, File, FileOpener, PayPal
   ],
   bootstrap: [AppComponent]
 })

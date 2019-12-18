@@ -193,6 +193,9 @@ export class BajasPage implements OnInit {
     });
     return alert.present();
   }
+  close() {
+    this.ModCtrl.dismiss();
+  }
 
 
 }

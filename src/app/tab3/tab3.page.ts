@@ -11,7 +11,8 @@ import {AddprovPage} from "../addprov/addprov.page";
 })
 export class Tab3Page  implements OnInit{
 provers: any[];
-  constructor(private db: AngularFirestore, private storage: AngularFireStorage, private popo: PopoverController) {}
+  constructor(private db: AngularFirestore, private storage: AngularFireStorage, private popo: PopoverController)
+  {}
   ngOnInit() {
    this.getdata();
   }
@@ -26,10 +27,11 @@ provers: any[];
       for (const dato of this.provers) {
         this.storage.ref(dato.datos.Imagen).getDownloadURL().toPromise().then(url => {
           dato.datos.Url = url;
-        }).catch(error =>{
+        }).catch(error => {
           console.log(error, 'nel');
         });
       }
+      console.log(this.provers);
     });
   }
   async addprov() {
