@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 //import { GoogleMaps } from '@ionic-native/google-maps';
 import { IonicModule } from '@ionic/angular';
 import { SubsidiaryPage } from './subsidiary.page';
-/*
+
 providers: [
   GoogleMaps
 ]
@@ -26,4 +26,3 @@ const routes: Routes = [
   declarations: [SubsidiaryPage]
 })
 export class SubsidiaryPageModule {}
-*/

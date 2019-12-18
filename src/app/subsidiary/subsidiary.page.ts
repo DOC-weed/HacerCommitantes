@@ -18,7 +18,7 @@ import { StaticSymbol } from '@angular/compiler';
   templateUrl: './subsidiary.page.html',
   styleUrls: ['./subsidiary.page.scss'],
 })
-export class subsidiary {
+export class SubsidiaryPage {
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform) { }
 /*
 export class subsidiary {
