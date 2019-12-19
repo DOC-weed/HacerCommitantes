@@ -8,6 +8,7 @@ import {AngularFireStorage} from '@angular/fire/storage';
 import {CarritoService} from '../carrito.service';
 import  {CarPage} from '../car/car.page';
 import {BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+import {UserPage} from '../user/user.page';
 
 @Component({
   selector: 'app-sales',
@@ -23,9 +24,9 @@ export class SalesPage implements OnInit {
   searchropa = '';
   searchelectric = '';
   searchpape = '';
-  datoscaneado: {};
-  ProductoFound;
+
   cantidad = 0;
+
   cant = 0;
   canti = 1;
   canti1 = 1;
@@ -123,37 +124,13 @@ export class SalesPage implements OnInit {
     });
     await modal.present();
   }
-  async openProfile() {
-    const modal = await this.ModCtrl.create({
-      component: ProfilePage,
-    });
-    await modal.present();
-  }
-  async openSubsidiary() {
-    const modal = await this.ModCtrl.create({
-      component: SubsidiaryPage,
-    });
-    await modal.present();
-  }
   search(event) {
     this.searchcomida = event.detail.value;
     this.searchelectric = event.detail.value;
     this.searchpape = event.detail.value;
     this.searchropa = event.detail.value;
   }
-  in(nombre, precio, stock) {
-    if (stock < this.canti) {
-      this.insu();
-    } else {
-      this.db.collection('Ventas').add({
-        Nombre: nombre,
-        Precio: precio,
-        Cantidad: this.canti,
-        Total: precio * this.canti
-      });
-    }
-   // console.log(id);
-  }
+
    async in1(nombre, precio, stock) {
    const alert = await this.Alert.create({
        inputs: [{
@@ -206,20 +183,13 @@ export class SalesPage implements OnInit {
     });
     alert.present();
   }
-  LeerCode() {
-    this.barcodeScanner.scan().then(barcodeData => {
-      this.datoscaneado = barcodeData;
-// console.log(this.datoscaneado['text']);
-      this.db.collection('Electronicos').ref.doc(this.datoscaneado['text']).get().then(doc => {
-        this.ProductoFound = doc.data();
-        console.log(this.ProductoFound);
-        this.storage.ref(this.ProductoFound.Url).getDownloadURL().toPromise().then((url) => {
-          console.log(url);
-        });
-      });
-    }).catch(err => {
-          console.log('Error del cod', err);
-        });
+  async LeerCode() {
+    const popo = await this.PoptCtrl.create({
+      component: UserPage,
+      backdropDismiss: true,
+    });
+    return popo.present();
+
   }
   async productoadd() {
       const alert = await this.Alert.create({
@@ -232,6 +202,9 @@ export class SalesPage implements OnInit {
       message: 'Datos vacios',
     });
     alert.present();
+  }
+  async updatecliente2() {
+
   }
 
 }

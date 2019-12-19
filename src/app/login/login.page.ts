@@ -16,6 +16,7 @@ passClient = '';
   constructor(private NavC: NavController, private Auth: AngularFireAuth, private AlertCtrl: AlertController) { }
 
   ngOnInit() {
+    localStorage.clear();
   }
  inicioAdmin(email, pass) {
       localStorage.setItem('correo', email);
@@ -29,6 +30,8 @@ passClient = '';
       });
  }
  inicioCliente(email, pass) {
+      localStorage.setItem('correo', email);
+      localStorage.setItem('pass', pass);
      this.Auth.auth.signInWithEmailAndPassword(email, pass).then(res => {
          this.usuClient = '';
          this.passClient = '';

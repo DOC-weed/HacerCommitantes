@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController, NavController} from "@ionic/angular";
 import { ViewChild } from "@angular/core";
+
 import {
   GoogleMaps,
   GoogleMap,
@@ -8,7 +9,8 @@ import {
   LatLng,
   MarkerOptions,
   Marker
-} from "@ionic-native/google-maps";
+} from "@ionic-native/google-maps/ngx";
+
 import { Platform} from "@ionic/angular";
 import { StaticSymbol } from '@angular/compiler';
 import { read } from 'fs';
@@ -19,14 +21,11 @@ import {SubsidiaryPageModule} from './subsidiary.module';
   styleUrls: ['./subsidiary.page.scss'],
 })
 export class SubsidiaryPage {
-<<<<<<< HEAD
-  @ViewChild('map',{static:false}) element;
-=======
-  constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform) { }
+  constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform, public googleMaps: GoogleMaps) { }
+ // @ViewChild('map') element;
 /*
-export class subsidiary {
-  @ViewChild('map') element;
->>>>>>> fcfb16c0f1faf0e44974634d7a5e8dfd2a55a5ef
+export class subsidiary {@ViewChild('map') element;
+  
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public googleMaps: GoogleMaps, public plt: Platform) { }
   ngOnInit() {
   }
@@ -35,9 +34,17 @@ export class subsidiary {
       this.initMap();
     });
   }
+  */
+  /*ngAfterViewInit() {
+    this.plt.ready().then(() => {
+      this.initMap();
+    });
+  }
 back() {
     this.NavCtrl.navigateForward('./sales');
 }
+
+/*
 initMap(){
 
   let map: GoogleMap = this.googleMaps.create(this.element.nativeElement);

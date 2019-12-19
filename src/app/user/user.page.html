@@ -1,9 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>User</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-button (click)="leercode()">kaka</ion-button>
+  <ion-item class="ion-text-capitalize">
+    <div class="col-1">
+      <img class="img" src="{{img}}" alt="">
+    </div>
+    <div class="col-2">
+      <ion-label class="ion-text-wrap producto">{{nombre}}</ion-label>
+      <br>
+      <ion-label class="ion-text-wrap dpto">Departamento: Papeleria</ion-label>
+      <br/>
+      <ion-label>Precio: ${{precio}}</ion-label>
+      <br/>
+      <ion-label>Stock: {{stock}} Pza(s)</ion-label>
+    </div>
+    <div class="col-3">
+      <ion-button (click)="in1(nombre, precio, stock)">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-item>
 
 </ion-content>

@@ -58,6 +58,9 @@ export class AltasPage {
     pricemen1.value = '';
     const pricemay1 = (document.getElementById('precio-may') as HTMLIonInputElement);
     pricemay1.value = '';
+    const img = (document.getElementById('output') as HTMLImageElement);
+    img.src= ''
+    this.file =null;
   }
     showimg(event) {
     this.file = event.target.files[0];

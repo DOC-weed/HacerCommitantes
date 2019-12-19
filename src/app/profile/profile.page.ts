@@ -19,5 +19,8 @@ export class ProfilePage implements OnInit {
   	this.email=localStorage.getItem('correo');
   	this.pass=localStorage.getItem('pass');
   }
+  close() {
+    this.ModCtrl.dismiss();
+  }
 
 }
