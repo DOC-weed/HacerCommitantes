@@ -1,22 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-  <ion-title>Carrito: ({{prod}}) Productos</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="secondary" class="center">
+        <ion-title>Carrito: {{prod}} Productos</ion-title>
+    </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-label >Total: ${{total}} </ion-label>
-  <ion-list *ngFor="let element of ventas">
+<ion-content class="negritas">
+    <ion-label>Total: ${{total}} </ion-label>
+    <ion-list *ngFor="let element of ventas">
 
-    <ion-item>
-      <ion-label>{{element.productos.Nombre}}</ion-label>
-      <ion-label>{{element.productos.Precio}}</ion-label>
-      <ion-label>{{element.productos.Cantidad}}</ion-label>
-      <ion-item>{{element.productos.Total}}</ion-item>
-      <ion-button (click)="eliminarprod(element.id)" color="danger"><ion-icon name="trash"></ion-icon></ion-button>
-    </ion-item>
+        <ion-item>
+            <ion-label>{{element.productos.Nombre}}</ion-label>
+            <ion-label>${{element.productos.Precio}}</ion-label>
+            <ion-label>{{element.productos.Cantidad}}Pza(s)</ion-label>
+            <ion-item>${{element.productos.Total}}</ion-item>
+            <ion-button (click)="eliminarprod(element.id)" color="danger">
+                <ion-icon name="trash"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
 
-  </ion-list>
-
-  <ion-button expand="fill" (click)="addtable()">Comprar</ion-button>
-  <ion-button expand="fill" (click)="eliminartabla()">Borrar carrito</ion-button>
+    <ion-button expand="fill" (click)="addtable()">Comprar</ion-button>
+    <ion-button expand="fill" (click)="eliminartabla()">Borrar carrito</ion-button>
 </ion-content>

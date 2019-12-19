@@ -1,24 +1,24 @@
 <ion-app>
-    <div class="ion-page" >
+    <div class="ion-page">
         <ion-header>
             <ion-toolbar color="secondary">
                 <ion-buttons slot="start">
                     <ion-back-button defaultHref="/"></ion-back-button>
                 </ion-buttons>
-                <ion-title>Report</ion-title>
+                <ion-title>Reportes</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content class="ion-padding">
-            <button ion-button full (click)="createPDFfood()">Food Report</button>
-        <br>
-            <button ion-button full (click)="createPDFelectronics()">Electronics Report</button>
+        <ion-content class="ion-padding reportes">
+            <button ion-button full (click)="createPDFfood()">Reporte Departamento de Comida</button>
             <br>
-            <button ion-button full (click)="createPDFstationery()">Stationery Report</button>
+            <button ion-button full (click)="createPDFelectronics()">Reporte Departamento de Electrinicos</button>
             <br>
-            <button ion-button full (click)="createPDFclothes()">Clothes Report</button>
+            <button ion-button full (click)="createPDFstationery()">Reporte Departamento de Papeleria</button>
+            <br>
+            <button ion-button full (click)="createPDFclothes()">Reporte Departamento de Ropa</button>
             <br>
 
-            <button ion-button full >Daily Sales Report</button>
+            <button ion-button full>Reporte de Ventas Diarias</button>
         </ion-content>
     </div>
 </ion-app>

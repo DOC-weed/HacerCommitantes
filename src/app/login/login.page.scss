@@ -10,6 +10,7 @@ ion-list {
     text-align: center;
 }
 
+<<<<<<< HEAD
 .admin1 {
     display: none;
     position: relative;
@@ -17,6 +18,20 @@ ion-list {
 
 admin1.ion-input {
     width: 100%;
+=======
+.center {
+    text-align: center;
+}
+
+.classcenter {
+    align-items: center;
+    display: block;
+}
+
+.admin1 {
+    display: none;
+    text-align: center;
+>>>>>>> fcfb16c0f1faf0e44974634d7a5e8dfd2a55a5ef
 }
 
 .cliente1 {
@@ -27,4 +42,13 @@ admin1.ion-input {
 ionic-input {
     display: block;
     margin: auto;
+<<<<<<< HEAD
+=======
+}
+
+.img {
+    align-items: center;
+    height: 40%;
+    width: 40%;
+>>>>>>> fcfb16c0f1faf0e44974634d7a5e8dfd2a55a5ef
 }

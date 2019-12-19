@@ -18,6 +18,8 @@ passClient = '';
   ngOnInit() {
   }
  inicioAdmin(email, pass) {
+      localStorage.setItem('correo', email);
+      localStorage.setItem('pass', pass);
       this.Auth.auth.signInWithEmailAndPassword(email, pass).then(res => {
           this.usuAdmin = '';
           this.passAdmin = '';
@@ -25,8 +27,6 @@ passClient = '';
       }).catch( res => {
           this.datosincorrectos();
       });
-
-
  }
  inicioCliente(email, pass) {
      this.Auth.auth.signInWithEmailAndPassword(email, pass).then(res => {

@@ -19,7 +19,14 @@ import {SubsidiaryPageModule} from './subsidiary.module';
   styleUrls: ['./subsidiary.page.scss'],
 })
 export class SubsidiaryPage {
+<<<<<<< HEAD
   @ViewChild('map',{static:false}) element;
+=======
+  constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform) { }
+/*
+export class subsidiary {
+  @ViewChild('map') element;
+>>>>>>> fcfb16c0f1faf0e44974634d7a5e8dfd2a55a5ef
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public googleMaps: GoogleMaps, public plt: Platform) { }
   ngOnInit() {
   }

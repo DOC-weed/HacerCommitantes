@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {AlertController, ModalController, NavParams} from "@ionic/angular";
+import {AlertController, ModalController, PopoverController, NavParams} from "@ionic/angular";
 import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireStorage} from "@angular/fire/storage";
 import {Observable} from "rxjs";
 import {finalize} from "rxjs/operators";
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -26,7 +27,7 @@ prodcomi;
   filepath;
 
   constructor( private Navparam: NavParams, private db: AngularFirestore, private storage: AngularFireStorage,
-               private AlertCtrl: AlertController, private ModCtrl: ModalController) { }
+               private AlertCtrl: AlertController, private ModCtrl: PopoverController) { }
 
 
 
@@ -34,6 +35,7 @@ prodcomi;
     this.id = this.Navparam.get('id');
     this.img = this.Navparam.get('image');
     this.dep = this.Navparam.get('depa');
+
     this.getdatos();
   }
   getImg(event) {
@@ -51,6 +53,9 @@ prodcomi;
     reader.readAsDataURL(input.files[0]);
   }
   getdatos() {
+    console.log(this.id);
+    console.log(this.img);
+    console.log(this.dep);
     this.db.collection(this.dep).ref.doc(this.id).get().then(doc => {
       this.prodcomi = doc.data();
       this.nombre = this.prodcomi.Nombre;
@@ -59,18 +64,18 @@ prodcomi;
       this.preciomay = this.prodcomi.PrecioMay;
       this.stock = this.prodcomi.Stock;
       this.filepath = this.prodcomi.Url;
-      console.log(doc.data());
-      console.log(this.prodcomi);
       });
-
   }
-  updatedata() {
+
+  up() {
     const fileRef = this.storage.ref(this.filepath);
     const task = this.storage.upload(this.filepath, this.img);
     this.uploadProgress = task.percentageChanges();
     task.snapshotChanges().pipe(
         finalize(() => this.uploadURL = fileRef.getDownloadURL())
     ).subscribe();
+    console.log(this.id);
+    console.log(this.dep);
     this.db.collection(this.dep).doc(this.id).update({
       Nombre: this.nombre,
       Precio: this.precio,
@@ -80,6 +85,8 @@ prodcomi;
       Url: this.filepath
     }).then(() => {
       this.alertClienteEdit();
+    }).catch(() => {
+      console.log('rerrrrrrrrrororororororo0oljm aigjeraifvowejjjfxjfcjkijlvjeofohl');
     });
     this.dismiss();
   }

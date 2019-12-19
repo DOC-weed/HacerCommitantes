@@ -1,9 +1,30 @@
-.col-1{
-  width: 30%;
+.col-1 {
+    width: 25%;
 }
-.col-2{
-  width:40% ;
+
+.col-2 {
+    width: 50%;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
 }
-.col-3{
-  width:30%;
+
+.col-3 {
+    width: 25%;
+    align-items: center;
+    text-align: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.dpto {
+    color: rgb(21, 78, 82);
+}
+
+.producto {
+    color: rgb(23, 100, 100);
 }
