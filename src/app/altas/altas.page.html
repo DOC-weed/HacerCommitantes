@@ -1,52 +1,41 @@
 <ion-app>
 
 
-    <div class="ion-page" >
+    <div class="ion-page">
         <ion-header>
             <ion-toolbar color="secondary">
                 <ion-buttons slot="start">
                     <ion-back-button (click)="close()"></ion-back-button>
                 </ion-buttons>
-                <ion-title>Register Products</ion-title>
+                <ion-title class="center">Registrar Productos</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
             <ion-item>
-                <img id="output" src=""/>
+                <img id="output" src="" />
             </ion-item>
             <ion-item>
                 <input id="img" (change)="showimg($event)" type="file" accept="image/*">
-                <ion-button><ion-icon name="trash"></ion-icon></ion-button>
+                <ion-button>
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">
-                    Product Name
-                </ion-label>
-                <ion-input required id="nombre" type="text"></ion-input>
+
+                <ion-input placeholder="Nombre" required id="nombre" type="text"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">
-                    Stock
-                </ion-label>
-                <ion-input required id="stock" type="number"></ion-input>
+                <ion-input placeholder="Cantidad" required id="stock" type="number"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">
-                Price
-            </ion-label>
-                <ion-input required id="precio" type="number"></ion-input>
+
+                <ion-input placeholder="Precio" required id="precio" type="number"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">
-                    Precio-menudeo
-                </ion-label>
-                <ion-input required id="precio-men" type="number"></ion-input>
+                <ion-input placeholder="Precio-Menudeo" required id="precio-men" type="number"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">
-                    Precio-mayoreo
-                </ion-label>
-                <ion-input required id="precio-may" type="number"></ion-input>
+                <ion-input placeholder="Precio-Mayoreo" required id="precio-may" type="number"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-select multiple="false" placeholder="Categoria" [(ngModel)]="categoria" (ionChange)="selectCategoria()">
@@ -58,7 +47,7 @@
                 <ion-label>{{categoria}}</ion-label>
             </ion-item>
             <section style="text-align: center;">
-                <ion-button size="small" class="button1" (click)="altaProducto()">Submit</ion-button>
+                <ion-button size="small" class="button1" (click)="altaProducto()">Agregar</ion-button>
             </section>
         </ion-content>
     </div>

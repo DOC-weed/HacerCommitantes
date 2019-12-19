@@ -2,41 +2,41 @@
     <ion-menu side="start" contentId="my-content">
         <ion-header>
             <ion-toolbar translucent color="secondary">
-                <ion-title>Home</ion-title>
+                <ion-title>Menu</ion-title>
             </ion-toolbar>
         </ion-header>
         <ion-content>
             <ion-list>
                 <ion-item href="/profile">
                     <ion-icon name="person" slot="start"></ion-icon>
-                    <ion-label>Profile</ion-label>
+                    <ion-label>Perfil</ion-label>
                 </ion-item>
                 <ion-item href="/subsidiary">
                     <ion-icon name="compass" slot="start"></ion-icon>
-                    <ion-label>Subsidiary</ion-label>
+                    <ion-label>Sucursales</ion-label>
                 </ion-item>
                 <ion-item href="/global">
                     <ion-icon name="bookmarks" slot="start"></ion-icon>
-                    <ion-label>Report</ion-label>
+                    <ion-label>Reportes</ion-label>
                 </ion-item>
                 <ion-item href="/login">
                     <ion-icon name="log-out" slot="start"></ion-icon>
-                    <ion-label>Logout</ion-label>
+                    <ion-label>Cerrar Sesion</ion-label>
                 </ion-item>
             </ion-list>
         </ion-content>
     </ion-menu>
 
-    <div class="ion-page" id="my-content" >
+    <div class="ion-page" id="my-content">
         <ion-header color="secondary">
             <ion-toolbar color="secondary">
                 <ion-buttons slot="start">
                     <ion-menu-button></ion-menu-button>
                 </ion-buttons>
-                <ion-title>Home</ion-title>
+                <ion-title>Inicio</ion-title>
             </ion-toolbar>
         </ion-header>
-        <ion-content >
+        <ion-content>
 
             <a></a>
             <ion-card (click)="Openaltaspage()" style="width: 99%; height: 30%;background-image: linear-gradient(to right, #f8ffe8 0%, #E3F5AB 33%, #b7df2d 100%);" class="card">
@@ -46,7 +46,7 @@
                     <p style="font-size: 1em; color: #1C7012">Realizar altas al sistema, agregando nuevos datos.</p>
                 </ion-card-content>
             </ion-card>
-            <ion-card  (click)="Opendeletepage()" style="width: 99%; height: 30%;background-image: linear-gradient(to right, #FFFFFF 0%, #FF1919 100%);" class="card">
+            <ion-card (click)="Opendeletepage()" style="width: 99%; height: 30%;background-image: linear-gradient(to right, #FFFFFF 0%, #FF1919 100%);" class="card">
                 <img src="https://image.flaticon.com/icons/svg/25/25449.svg" style="width: 150px; height: 150px; position: absolute; top: 35%;right:5%;opacity: .3" class="img">
                 <ion-card-header style="font-size: 2em">Bajas</ion-card-header>
                 <ion-card-content>

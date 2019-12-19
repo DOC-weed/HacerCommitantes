@@ -1,1 +1,32 @@
+.col-1 {
+    width: 25%;
+}
 
+.col-2 {
+    width: 45%;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.col-3 {
+    width: 30%;
+    font-size: 11px;
+    align-items: center;
+    text-align: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.name {
+    color: rgb(21, 78, 82);
+    font-size: 13px;
+}
+
+.producto {
+    color: rgb(23, 100, 100);
+}

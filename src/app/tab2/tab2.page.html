@@ -9,19 +9,19 @@
             <ion-list>
                 <ion-item href="/profile">
                     <ion-icon name="person" slot="start"></ion-icon>
-                    <ion-label>Profile</ion-label>
+                    <ion-label>Perfil</ion-label>
                 </ion-item>
                 <ion-item href="/subsidiary">
                     <ion-icon name="compass" slot="start"></ion-icon>
-                    <ion-label>Subsidiary</ion-label>
+                    <ion-label>Sucursales</ion-label>
                 </ion-item>
                 <ion-item href="/global">
                     <ion-icon name="bookmarks" slot="start"></ion-icon>
-                    <ion-label>Report</ion-label>
+                    <ion-label>Reportes</ion-label>
                 </ion-item>
                 <ion-item href="/login">
                     <ion-icon name="log-out" slot="start"></ion-icon>
-                    <ion-label>Logout</ion-label>
+                    <ion-label>Cerrar Sesion</ion-label>
                 </ion-item>
             </ion-list>
         </ion-content>
@@ -33,23 +33,23 @@
                 <ion-buttons slot="start">
                     <ion-menu-button></ion-menu-button>
                 </ion-buttons>
-                <ion-title>Inventory</ion-title>
+                <ion-title>Inventario</ion-title>
             </ion-toolbar>
             <ion-searchbar (ionChange)="search($event)" animated></ion-searchbar>
         </ion-header>
         <ion-content>
-            <ion-list *ngFor="let element of comida | filtro: searchcomida" >
+            <ion-list *ngFor="let element of comida | filtro: searchcomida">
                 <ion-item-sliding>
                     <ion-item class="ion-text-capitalize">
                         <div class="col-1">
-                            <img class="img" src="{{element.productos.Url2}}" alt=""/>
+                            <img class="img" src="{{element.productos.Url2}}" alt="" />
                         </div>
                         <div class="col-2">
-                            <ion-label>ID: {{element.id}}</ion-label>
+                            <ion-label class="id">ID: {{element.id}}</ion-label>
                             <br>
                             <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
                             <br>
-                            <ion-label class="ion-text-wrap">Departamento: {{element.productos.Departamento}}</ion-label>
+                            <ion-label class="ion-text-wrap dpto">Departamento: {{element.productos.Departamento}}</ion-label>
                         </div>
                         <div class="col-3">
                             <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
@@ -63,25 +63,25 @@
                     </ion-item>
                     <ion-item-options side="start">
                         <ion-item-option color="medium">
-                            <ion-button  fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
+                            <ion-button fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
                                 <ion-icon name="build"></ion-icon>
                             </ion-button>
                         </ion-item-option>
                     </ion-item-options>
                 </ion-item-sliding>
             </ion-list>
-            <ion-list *ngFor="let element of ropa | filtro: searchropa" >
+            <ion-list *ngFor="let element of ropa | filtro: searchropa">
                 <ion-item-sliding>
                     <ion-item class="ion-text-capitalize">
                         <div class="col-1">
                             <img class="img" src="{{element.productos.Url2}}" alt="">
                         </div>
                         <div class="col-2">
-                            <ion-label>ID: {{element.id}}</ion-label>
+                            <ion-label class="id">ID: {{element.id}}</ion-label>
                             <br>
                             <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
                             <br>
-                            <ion-label class="ion-text-wrap">Departamento: {{element.productos.Departamento}}</ion-label>
+                            <ion-label class="ion-text-wrap dpto">Departamento: {{element.productos.Departamento}}</ion-label>
                         </div>
                         <div class="col-3">
                             <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
@@ -95,25 +95,25 @@
                     </ion-item>
                     <ion-item-options side="start">
                         <ion-item-option color="medium">
-                            <ion-button  fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
-                                <ion-icon  name="build"></ion-icon>
+                            <ion-button fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
+                                <ion-icon name="build"></ion-icon>
                             </ion-button>
                         </ion-item-option>
                     </ion-item-options>
                 </ion-item-sliding>
             </ion-list>
-            <ion-list *ngFor="let element of pape | filtro: searchpape" >
+            <ion-list *ngFor="let element of pape | filtro: searchpape">
                 <ion-item-sliding>
                     <ion-item class="ion-text-capitalize">
                         <div class="col-1">
                             <img class="img" src="{{element.productos.Url2}}" alt="">
                         </div>
                         <div class="col-2">
-                            <ion-label>ID: {{element.id}}</ion-label>
+                            <ion-label class="id">ID: {{element.id}}</ion-label>
                             <br>
                             <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
                             <br>
-                            <ion-label class="ion-text-wrap">Departamento: {{element.productos.Departamento}}</ion-label>
+                            <ion-label class="ion-text-wrap dpto">Departamento: {{element.productos.Departamento}}</ion-label>
                         </div>
                         <div class="col-3">
                             <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
@@ -127,25 +127,25 @@
                     </ion-item>
                     <ion-item-options side="start">
                         <ion-item-option color="medium">
-                            <ion-button  fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
-                                <ion-icon  name="build"></ion-icon>
+                            <ion-button fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
+                                <ion-icon name="build"></ion-icon>
                             </ion-button>
                         </ion-item-option>
                     </ion-item-options>
                 </ion-item-sliding>
             </ion-list>
-            <ion-list *ngFor="let element of electric | filtro: searchelectric" >
+            <ion-list *ngFor="let element of electric | filtro: searchelectric">
                 <ion-item-sliding>
                     <ion-item class="ion-text-capitalize">
                         <div class="col-1">
                             <img class="img" src="{{element.productos.Url2}}" alt="">
                         </div>
                         <div class="col-2">
-                            <ion-label>ID: {{element.id}}</ion-label>
+                            <ion-label class="id">ID: {{element.id}}</ion-label>
                             <br>
                             <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
                             <br>
-                            <ion-label class="ion-text-wrap">Departamento: {{element.productos.Departamento}}</ion-label>
+                            <ion-label class="ion-text-wrap dpto">Departamento: {{element.productos.Departamento}}</ion-label>
                         </div>
                         <div class="col-3">
                             <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
@@ -159,7 +159,7 @@
                     </ion-item>
                     <ion-item-options side="start">
                         <ion-item-option color="medium">
-                            <ion-button   fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
+                            <ion-button fill="clear" (click)="updatecliente1(element.id, element.productos.Url2, element.productos.Departamento)">
                                 <ion-icon name="build"></ion-icon>
                             </ion-button>
                         </ion-item-option>

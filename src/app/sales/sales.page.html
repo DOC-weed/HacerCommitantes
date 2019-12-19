@@ -13,7 +13,7 @@
                 </ion-item>
                 <ion-item href="/login">
                     <ion-icon name="log-out" slot="start"></ion-icon>
-                    <ion-label>Logout</ion-label>
+                    <ion-label>Cerrar Sesion</ion-label>
                 </ion-item>
             </ion-list>
         </ion-content>
@@ -25,8 +25,12 @@
                 <ion-buttons slot="start">
                     <ion-menu-button></ion-menu-button>
                 </ion-buttons>
-                <ion-title>Sales</ion-title>
-               <ion-buttons slot="end"><ion-button (click)="LeerCode()"><ion-icon name="camera"></ion-icon></ion-button></ion-buttons>
+                <ion-title>Ventas</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="LeerCode()">
+                        <ion-icon name="camera"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
             </ion-toolbar>
             <ion-searchbar (ionChange)="search($event)" animated></ion-searchbar>
         </ion-header>
@@ -34,101 +38,101 @@
 
             <ion-fab vertical="bottom" horizontal="end" slot="fixed">
                 <ion-fab-button (click)="openecar()" color="warning">
-                    <ion-icon  name="cart"></ion-icon>
+                    <ion-icon name="cart"></ion-icon>
                 </ion-fab-button>
             </ion-fab>
-            <ion-list *ngFor="let element of comida | filtro: searchcomida" >
-                    <ion-item class="ion-text-capitalize">
-                        <div class="col-1">
-                            <img class="img" src="{{element.productos.Url2}}" alt=""/>
-                        </div>
-                        <div class="col-2">
-                            <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
-                            <br>
-                            <ion-label class="ion-text-wrap">Departamento: Comida</ion-label>
-                            <br/>
-                            <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
-                            <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
-                            <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
-                            <br/>
-                            <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
-                        </div>
-                        <div class="col-3">
-                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
-                                <ion-icon name="add"></ion-icon>
-                            </ion-button>
-                        </div>
-                    </ion-item>
+            <ion-list *ngFor="let element of comida | filtro: searchcomida">
+                <ion-item class="ion-text-capitalize">
+                    <div class="col-1">
+                        <img class="img" src="{{element.productos.Url2}}" alt="" />
+                    </div>
+                    <div class="col-2">
+                        <ion-label class="ion-text-wrap producto">{{element.productos.Nombre}}</ion-label>
+                        <br>
+                        <ion-label class="ion-text-wrap dpto">Departamento: Comida</ion-label>
+                        <br/>
+                        <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
+                        <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
+                        <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
+                        <br/>
+                        <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
+                    </div>
+                    <div class="col-3">
+                        <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-button>
+                    </div>
+                </ion-item>
             </ion-list>
-            <ion-list *ngFor="let element of ropa | filtro: searchropa" >
-                    <ion-item class="ion-text-capitalize">
-                        <div class="col-1">
-                            <img class="img" src="{{element.productos.Url2}}" alt="">
-                        </div>
-                        <div class="col-2">
-                            <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
-                            <br>
-                            <ion-label class="ion-text-wrap">Departamento: Ropa</ion-label>
-                            <br/>
-                            <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
-                            <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
-                            <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
-                            <br/>
-                            <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
-                        </div>
-                        <div class="col-3">
-                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
-                                <ion-icon name="add"></ion-icon>
-                            </ion-button>
-                        </div>
-                    </ion-item>
+            <ion-list *ngFor="let element of ropa | filtro: searchropa">
+                <ion-item class="ion-text-capitalize">
+                    <div class="col-1">
+                        <img class="img" src="{{element.productos.Url2}}" alt="">
+                    </div>
+                    <div class="col-2">
+                        <ion-label class="ion-text-wrap producto">{{element.productos.Nombre}}</ion-label>
+                        <br>
+                        <ion-label class="ion-text-wrap dpto">Departamento: Ropa</ion-label>
+                        <br/>
+                        <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
+                        <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
+                        <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
+                        <br/>
+                        <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
+                    </div>
+                    <div class="col-3">
+                        <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-button>
+                    </div>
+                </ion-item>
             </ion-list>
-            <ion-list *ngFor="let element of pape | filtro: searchpape" >
+            <ion-list *ngFor="let element of pape | filtro: searchpape">
 
-                    <ion-item class="ion-text-capitalize">
-                        <div class="col-1">
-                            <img class="img" src="{{element.productos.Url2}}" alt="">
-                        </div>
-                        <div class="col-2">
-                            <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
-                            <br>
-                            <ion-label class="ion-text-wrap">Departamento: Papeleria</ion-label>
-                            <br/>
-                            <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
-                            <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
-                            <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
-                            <br/>
-                            <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
-                        </div>
-                        <div class="col-3">
-                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
-                                <ion-icon name="add"></ion-icon>
-                            </ion-button>
-                        </div>
-                    </ion-item>
+                <ion-item class="ion-text-capitalize">
+                    <div class="col-1">
+                        <img class="img" src="{{element.productos.Url2}}" alt="">
+                    </div>
+                    <div class="col-2">
+                        <ion-label class="ion-text-wrap producto">{{element.productos.Nombre}}</ion-label>
+                        <br>
+                        <ion-label class="ion-text-wrap dpto">Departamento: Papeleria</ion-label>
+                        <br/>
+                        <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
+                        <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
+                        <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
+                        <br/>
+                        <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
+                    </div>
+                    <div class="col-3">
+                        <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-button>
+                    </div>
+                </ion-item>
             </ion-list>
-            <ion-list *ngFor="let element of electric | filtro: searchelectric" >
-                    <ion-item class="ion-text-capitalize">
-                        <div class="col-1">
-                            <img class="img" src="{{element.productos.Url2}}" alt="">
-                        </div>
-                        <div class="col-2">
-                            <ion-label class="ion-text-wrap">{{element.productos.Nombre}}</ion-label>
-                            <br>
-                            <ion-label class="ion-text-wrap">Departamento: Electronicos</ion-label>
-                            <br/>
-                            <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
-                            <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
-                            <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
-                            <br/>
-                            <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
-                        </div>
-                        <div class="col-3">
-                            <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
-                                <ion-icon name="add"></ion-icon>
-                            </ion-button>
-                        </div>
-                    </ion-item>
+            <ion-list *ngFor="let element of electric | filtro: searchelectric">
+                <ion-item class="ion-text-capitalize">
+                    <div class="col-1">
+                        <img class="img" src="{{element.productos.Url2}}" alt="">
+                    </div>
+                    <div class="col-2">
+                        <ion-label class="ion-text-wrap producto">{{element.productos.Nombre}}</ion-label>
+                        <br>
+                        <ion-label class="ion-text-wrap dpto">Departamento: Electronicos</ion-label>
+                        <br/>
+                        <ion-label>Precio: ${{element.productos.Precio}}</ion-label>
+                        <ion-label>Menudeo: ${{element.productos.PrecioMay}}</ion-label>
+                        <ion-label>Mayoreo: ${{element.productos.PrecioMen}}</ion-label>
+                        <br/>
+                        <ion-label>Stock: {{element.productos.Stock}} Pza(s)</ion-label>
+                    </div>
+                    <div class="col-3">
+                        <ion-button (click)="in1(element.productos.Nombre, element.productos.Precio, element.productos.Stock)">
+                            <ion-icon name="add"></ion-icon>
+                        </ion-button>
+                    </div>
+                </ion-item>
             </ion-list>
 
 

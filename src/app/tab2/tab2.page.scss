@@ -1,15 +1,32 @@
 .col-1 {
-  width: 30%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+    width: 25%;
 }
+
 .col-2 {
-  width: 40%;
-  text-align: center;
+    width: 50%;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
 }
+
 .col-3 {
-  width: 30%;
-  text-align: center;
+    width: 25%;
+    font-size: 11px;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.dpto {
+    color: rgb(1, 49, 53)
+}
+
+.id {
+    color: rgb(23, 100, 100);
 }

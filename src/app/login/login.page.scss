@@ -9,17 +9,32 @@ ion-list {
 .center {
     text-align: center;
 }
+
 .center {
     text-align: center;
 }
-.admin1{
-display: none;
+
+.classcenter {
+    align-items: center;
+    display: block;
 }
-.cliente1{
+
+.admin1 {
+    display: none;
+    text-align: center;
+}
+
+.cliente1 {
     display: none;
 }
-ionic-input
-{
+
+ionic-input {
     display: block;
     margin: auto;
+}
+
+.img {
+    align-items: center;
+    height: 40%;
+    width: 40%;
 }

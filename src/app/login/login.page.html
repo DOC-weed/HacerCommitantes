@@ -1,23 +1,21 @@
 <ion-content>
-   <ion-item>
-       <ion-img></ion-img>
-   </ion-item>
-    <ion-item>
+    <img class="img" src="../assets/logo.jpeg" alt="" style="display: block;margin:auto;">
+    <ion-item class="classcenter">
         <ion-button (click)="showadmin()">Admin</ion-button>
         <div id="admin" class="admin1">
-        <ion-input [(ngModel)]="usuAdmin" placeholder="Correo" ></ion-input>
-        <ion-input type="password" [(ngModel)]="passAdmin" placeholder="Contraseña"></ion-input>
-        <br>
-        <ion-button (click)="inicioAdmin(usuAdmin, passAdmin)">Ingresar</ion-button>
+            <ion-input [(ngModel)]="usuAdmin" placeholder="Correo"></ion-input>
+            <ion-input type="password" [(ngModel)]="passAdmin" placeholder="Contraseña"></ion-input>
+            <br>
+            <ion-button (click)="inicioAdmin(usuAdmin, passAdmin)">Ingresar</ion-button>
         </div>
     </ion-item>
     <ion-item>
         <ion-button (click)="showcliente()">Cliente</ion-button>
         <div id="cliente" class="cliente1">
-        <ion-input [(ngModel)]="usuClient" placeholder="Correo"></ion-input>
-        <ion-input type="password" [(ngModel)]="passClient" placeholder="Contraseña"></ion-input>
-        <br>
-        <ion-button (click)="inicioCliente(usuClient, passClient)">Ingresar</ion-button>
+            <ion-input [(ngModel)]="usuClient" placeholder="Correo"></ion-input>
+            <ion-input type="password" [(ngModel)]="passClient" placeholder="Contraseña"></ion-input>
+            <br>
+            <ion-button (click)="inicioCliente(usuClient, passClient)">Ingresar</ion-button>
         </div>
     </ion-item>
 </ion-content>
