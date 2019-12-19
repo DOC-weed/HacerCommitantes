@@ -25,10 +25,12 @@ import {SubsidiaryPageModule} from './subsidiary.module';
  // @ViewChild('map') element;
 
 export class SubsidiaryPage {
-  @ViewChild('map') element;
-constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform, public googleMaps: GoogleMaps) { }
-  /*
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public googleMaps: GoogleMaps, public plt: Platform) { }
+ /* @ViewChild('map') element;
+constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform, public googleMaps: GoogleMaps) { }
+  */
+  /*
+  
   ngOnInit() {
   }
   ngAfterViewInit() {
@@ -47,7 +49,7 @@ back() {
 }
 */
 
-initMap(){
+/* initMap(){
 
   let map: GoogleMap = this.googleMaps.create(this.element.nativeElement);
 
@@ -74,4 +76,5 @@ initMap(){
     });
   });
 }
+*/
 }

@@ -8,7 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import {SubsidiaryPage} from './subsidiary.page';
 
 
-import { SubsidiaryPage } from './subsidiary.page';
+
 
 providers: [
   GoogleMaps
