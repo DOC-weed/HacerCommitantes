@@ -43,7 +43,7 @@ export class GlobalPage implements OnInit {
   ngOnInit() {
     this.showdata();
   }
-
+/*Muestra toda la información de los productos*/
   showdata() {
     this.database.collection('Comida').snapshotChanges().subscribe(data => {
       this.data = data.map(e => {
@@ -62,6 +62,7 @@ export class GlobalPage implements OnInit {
           console.log('khaaaa!!!', error);
         });
       }
+      /*Aqui se trae toda la información de la tabla*/
       for (const cont of this.data) {
         if (cont.comida.Stock < 5) {
           this.ID = this.ID + cont.id + '\n';
@@ -76,7 +77,7 @@ export class GlobalPage implements OnInit {
         }
       }
     });
-
+/*Aqui se trae toda la información de la tabla*/
     this.database.collection('Electronicos').snapshotChanges().subscribe(data => {
       this.data = data.map(e => {
         return {
@@ -108,7 +109,7 @@ export class GlobalPage implements OnInit {
           }
       }
     });
-
+/*Aqui se trae toda la información de la tabla*/
     this.database.collection('Papeleria').snapshotChanges().subscribe(data => {
       this.data = data.map(e => {
         return {
@@ -140,7 +141,7 @@ export class GlobalPage implements OnInit {
         }
       }
     });
-
+/*Aqui se trae toda la información de la tabla*/
     this.database.collection('Ropa').snapshotChanges().subscribe(data => {
       this.data = data.map(e => {
         return {
@@ -174,7 +175,7 @@ export class GlobalPage implements OnInit {
     });
 
   }
-
+/*Se crea un pdf con los reportes de la base de datos*/
   createPDFfood() {
     const date = new Date();
     const docDefinition = {
@@ -207,6 +208,7 @@ export class GlobalPage implements OnInit {
       this.pdfObj.download('Reporte Dpto: Comida' + date.getDate() + '-' + (new Date().getMonth() + 1) + '-' + date.getFullYear());
     }
   }
+/*Se crea un pdf con los reportes de la base de datos*/
 
   createPDFelectronics() {
 
@@ -241,6 +243,7 @@ export class GlobalPage implements OnInit {
       this.pdfObj.download('Reporte Dpto: Electronicos' + date.getDate() + '-' + (new Date().getMonth() + 1) + '-' + date.getFullYear());
     }
   }
+/*Se crea un pdf con los reportes de la base de datos*/
 
   createPDFstationery() {
 
@@ -278,6 +281,7 @@ export class GlobalPage implements OnInit {
     }
   }
 
+/*Se crea un pdf con los reportes de la base de datos*/
 
   createPDFclothes() {
 

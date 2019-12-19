@@ -16,6 +16,8 @@ provers: any[];
   ngOnInit() {
    this.getdata();
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   getdata() {
     this.db.collection('Proveedor').snapshotChanges().subscribe(data => {
       this.provers = data.map(e => {
@@ -33,7 +35,7 @@ provers: any[];
       }
       console.log(this.provers);
     });
-  }
+  }/*Aqui se agrega al provedor*/
   async addprov() {
     const popo = await this.popo.create({
       component: AddprovPage,

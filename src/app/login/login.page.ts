@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AlertController, NavController} from '@ionic/angular';
 import {AngularFireAuth} from "@angular/fire/auth";
-
+/*Esta parte del código es para el login*/
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -17,6 +17,7 @@ passClient = '';
 
   ngOnInit() {
     localStorage.clear();
+    /* Si aqui te logeas con la cuenta del admin te mete a la parte de admin*/
   }
  inicioAdmin(email, pass) {
       localStorage.setItem('correo', email);
@@ -29,6 +30,7 @@ passClient = '';
           this.datosincorrectos();
       });
  }
+ /*Si te loegas con cuenta de cliente te manda a la parte del cliente*/
  inicioCliente(email, pass) {
       localStorage.setItem('correo', email);
       localStorage.setItem('pass', pass);
@@ -39,13 +41,13 @@ passClient = '';
      }).catch( res => {
          this.datosincorrectos();
      });
- }
+ } /*Te manda una alerta si tienes datos incorrectos*/
  async datosincorrectos() {
       const alert = await this.AlertCtrl.create({
           message: 'Datos incorrectos, ingrese nuevos datos',
       });
       alert.present();
- }
+ } /*Si le das showadmin se muestran los inputs que se pueden usar*/
  showadmin() {
 const admin1 = (document.getElementById('admin') as HTMLDivElement).style;
 const btninput = (document.getElementById('btninput1') as HTMLDivElement).style;
@@ -56,7 +58,7 @@ btninput.margin = 'auto';
 const client = (document.getElementById('cliente') as HTMLDivElement).style;
 client.display = 'none';
 
-  }
+   } /*Si le das showcliente se muestran los inputs que se pueden usar*/
   showcliente() {
       const admin1 = (document.getElementById('admin') as HTMLDivElement).style;
       admin1.display = 'none';

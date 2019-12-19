@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {AngularFireStorage} from "@angular/fire/storage";
@@ -16,7 +17,7 @@ export class AddprovPage implements OnInit {
   uploadURL: Observable<string>;
   proveedor;
   constructor(private db: AngularFirestore, private storage: AngularFireStorage, private popo: PopoverController, private alert: AlertController) { }
-
+   /*  En esta parte del codigo el getImg */
   ngOnInit() {
   }
   getImg(event) {
@@ -32,6 +33,7 @@ export class AddprovPage implements OnInit {
     };
     reader.readAsDataURL(input.files[0]);
   }
+  /* Este add es para generar un ID Y subirloa la base de datos*/
   add() {
     const randomId = Math.random().toString(36).substring(2, 9);
     const filepath = `images/${randomId}`;
@@ -57,6 +59,7 @@ export class AddprovPage implements OnInit {
       this.file = null;
     });
   }
+  /* Esta es una alerta para indicar que el producto fue agregado*/
   async addProveer() {
     const alertt = await this.alert.create({
       message: 'Se agrego proveedor',

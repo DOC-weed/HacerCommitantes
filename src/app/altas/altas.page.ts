@@ -26,7 +26,7 @@ export class AltasPage {
 
   constructor(private database: AngularFirestore, private storage: AngularFireStorage, private AlerCtrl: AlertController,
               private ModCtrl: ModalController, private barcodeScanner: BarcodeScanner) { }
-
+/* este código es paa agregar un producto*/
   altaProducto() {
     const randomId = Math.random().toString(36).substring(2, 9);
     const filepath = `images/${randomId}`;
@@ -62,6 +62,7 @@ export class AltasPage {
     img.src= ''
     this.file =null;
   }
+  /* En este input se toma una imgen y se guarda en la etiqueta que tenga el output*/
     showimg(event) {
     this.file = event.target.files[0];
     const input = event.target;

@@ -18,13 +18,15 @@ export class Tab1Page {
   }
   Move(){
     this.NavC.navigateForward('/altas');
-  }
+  } 
+  /*Es para ir a la pag de altas */
   async Openaltaspage() {
     const altas1 = await this.ModCtrl.create({
       component: AltasPage,
     });
     await altas1.present();
   }
+  /* Es para ir a la pag de bajas */
   async Opendeletepage() {
     const delete1 = await this.ModCtrl.create({
       component: BajasPage,

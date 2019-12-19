@@ -32,6 +32,7 @@ export class BajasPage implements OnInit {
     this.showPape();
     this.showRopa();
   }
+  /* Esta linea de código sirve para mostrar los datos de la base de datos*/
   showComida() {
     this.db.collection('Comida').snapshotChanges().subscribe(data => {
       this.comida = data.map(e => {
@@ -54,6 +55,7 @@ export class BajasPage implements OnInit {
       }
     });
   }
+  /* Esta linea de código sirve para mostrar los datos de la base de datos*/
   showRopa() {
     this.db.collection('Ropa').snapshotChanges().subscribe(data => {
       this.ropa = data.map(e => {
@@ -73,6 +75,7 @@ export class BajasPage implements OnInit {
       }
     });
   }
+  /* Esta linea de código sirve para mostrar los datos de la base de datos*/
   showElectric() {
     this.db.collection('Electronicos').snapshotChanges().subscribe(data => {
       this.electric = data.map(e => {
@@ -92,6 +95,7 @@ export class BajasPage implements OnInit {
       }
     });
   }
+  /* Esta linea de código sirve para mostrar los datos de la base de datos*/
   showPape() {
     this.db.collection('Papeleria').snapshotChanges().subscribe(data => {
       this.pape = data.map(e => {
@@ -110,13 +114,15 @@ export class BajasPage implements OnInit {
         });
       }
     });
-  }
+  } /* Aqui se toman los datos de la barra de busqueda para luego ser encontrados en la base de datos*/
   search(event) {
     this.searchComida = event.detail.value;
     this.searchElectric = event.detail.value;
     this.searchPape = event.detail.value;
     this.searchRopa = event.detail.value;
   }
+  /* Aqui se manda una alerta por si estas seguro de eliminar, y si le das confirmar se eliminara el campo de la
+  base de datos*/
   async delelecliente1(id, url) {
     const alert = await this.AlertCtrl.create({
       message: '¿Esta seguro de eliminar el producto?',
@@ -136,6 +142,8 @@ export class BajasPage implements OnInit {
     });
     return alert.present();
   }
+  /* Aqui se manda una alerta por si estas seguro de eliminar, y si le das confirmar se eliminara el campo de la
+  base de datos*/
   async delelecliente2(id, url) {
     const alert = await this.AlertCtrl.create({
       message: '¿Esta seguro de eliminar el producto?',
@@ -155,6 +163,8 @@ export class BajasPage implements OnInit {
     });
     return alert.present();
   }
+  /* Aqui se manda una alerta por si estas seguro de eliminar, y si le das confirmar se eliminara el campo de la
+  base de datos*/
   async delelecliente3(id, url) {
     const alert = await this.AlertCtrl.create({
       message: '¿Esta seguro de eliminar el producto?',
@@ -174,6 +184,8 @@ export class BajasPage implements OnInit {
     });
     return alert.present();
   }
+  /* Aqui se manda una alerta por si estas seguro de eliminar, y si le das confirmar se eliminara el campo de la
+  base de datos*/
   async delelecliente4(id, url) {
     const alert = await this.AlertCtrl.create({
       message: '¿Esta seguro de eliminar el producto?',
