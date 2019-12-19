@@ -45,14 +45,20 @@ passClient = '';
  }
  showadmin() {
 const admin1 = (document.getElementById('admin') as HTMLDivElement).style;
-admin1.display = 'flex';
+const btninput = (document.getElementById('btninput1') as HTMLDivElement).style;
+admin1.display = 'block';
+admin1.position = 'relative';
+btninput.position = 'block';
+btninput.margin = 'auto';
 const client = (document.getElementById('cliente') as HTMLDivElement).style;
 client.display = 'none';
+
   }
   showcliente() {
       const admin1 = (document.getElementById('admin') as HTMLDivElement).style;
       admin1.display = 'none';
       const client = (document.getElementById('cliente') as HTMLDivElement).style;
       client.display = 'block';
+      client.position = 'relative';
   }
 }

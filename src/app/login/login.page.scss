@@ -9,17 +9,22 @@ ion-list {
 .center {
     text-align: center;
 }
-.center {
-    text-align: center;
-}
-.admin1{
-display: none;
-}
-.cliente1{
+
+.admin1 {
     display: none;
+    position: relative;
 }
-ionic-input
-{
+
+admin1.ion-input {
+    width: 100%;
+}
+
+.cliente1 {
+    display: none;
+    position: relative;
+}
+
+ionic-input {
     display: block;
     margin: auto;
 }

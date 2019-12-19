@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController, NavController} from "@ionic/angular";
 import { ViewChild } from "@angular/core";
-/*
 import {
   GoogleMaps,
   GoogleMap,
@@ -10,19 +9,17 @@ import {
   MarkerOptions,
   Marker
 } from "@ionic-native/google-maps";
-*/
 import { Platform} from "@ionic/angular";
 import { StaticSymbol } from '@angular/compiler';
+import { read } from 'fs';
+import {SubsidiaryPageModule} from './subsidiary.module';
 @Component({
   selector: 'app-subsidiary',
   templateUrl: './subsidiary.page.html',
   styleUrls: ['./subsidiary.page.scss'],
 })
-export class subsidiary {
-  constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform) { }
-/*
-export class subsidiary {
-  @ViewChild('map') element;
+export class SubsidiaryPage {
+  @ViewChild('map',{static:false}) element;
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public googleMaps: GoogleMaps, public plt: Platform) { }
   ngOnInit() {
   }
@@ -31,11 +28,9 @@ export class subsidiary {
       this.initMap();
     });
   }
-  */
 back() {
     this.NavCtrl.navigateForward('./sales');
 }
-/*
 initMap(){
 
   let map: GoogleMap = this.googleMaps.create(this.element.nativeElement);
@@ -62,6 +57,5 @@ initMap(){
         marker.showInfoWindow();
     });
   });
-  
-}*/
+}
 }
