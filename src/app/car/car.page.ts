@@ -23,7 +23,7 @@ export class CarPage implements OnInit {
   ngOnInit() {
     this.getcarrito();
   }
-
+/* Este codigo es para obtener los datos del carrito y se hace la sumatoria total de este*/
   getcarrito() {
     this.db.collection('Ventas').snapshotChanges().subscribe(data => {
           this.ventas = data.map(e => {
@@ -43,12 +43,13 @@ export class CarPage implements OnInit {
         }
     );
   }
-
+/* Aqui se puede eliminar un campo de la base de datos base de datos*/
   eliminarprod(id) {
     this.db.collection('Ventas').doc(id).delete();
 
 
   }
+  /*Aqui se puede eliminar todo el campo la base de datos del carrito*/
   async eliminartabla() {
     const alert = await this.AlertCtrl.create({
       message: 'Se borraran todos los productos del carrito, ¿Desea continuar?',
@@ -66,7 +67,7 @@ export class CarPage implements OnInit {
       }]
     });
     alert.present();
-  }
+  } /* Esta es una api de paypal, la cual no deja comprar si el carrito esta en 0*/
   addtable() {
     this.total1 = this.total.toString();
     console.log(this.total1);
@@ -111,7 +112,8 @@ export class CarPage implements OnInit {
     }, () => {
       // Error in initialization, maybe PayPal isn't supported or something else
     });
-  }
+  
+  }/* Aqui es donde se elimina la parte de ventas de la base de datos*/
   deletecollection() {
     this.db.collection('Ventas').snapshotChanges().subscribe(data => {
           this.ventas = data.map(e => {

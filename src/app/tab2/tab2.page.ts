@@ -37,6 +37,8 @@ export class Tab2Page implements OnInit {
           productos: e.payload.doc.data()
         };
       });
+        /*Obtiene los datos del campo específico de  la base de datos */
+
       console.log(this.comida);
       for (const producto of this.comida) {
         console.log(producto.productos.Url);
@@ -48,6 +50,8 @@ export class Tab2Page implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showRopa() {
     this.db.collection('Ropa').snapshotChanges().subscribe(data => {
       this.ropa = data.map(e => {
@@ -67,6 +71,8 @@ export class Tab2Page implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showElectric() {
     this.db.collection('Electronicos').snapshotChanges().subscribe(data => {
       this.electric = data.map(e => {
@@ -86,6 +92,8 @@ export class Tab2Page implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showPape() {
     this.db.collection('Papeleria').snapshotChanges().subscribe(data => {
       this.pape = data.map(e => {
@@ -105,6 +113,7 @@ export class Tab2Page implements OnInit {
       }
     });
   }
+  /*Esta parte es para abrir la pagina de edit */
   async updatecliente1(element, url, dep) {
     const popo = await this.PopCtrl.create({
       component: EditPage,

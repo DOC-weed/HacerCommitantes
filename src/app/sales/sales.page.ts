@@ -42,6 +42,7 @@ export class SalesPage implements OnInit {
     this.showPape();
     this.showRopa();
   }
+  /*Obtiene los datos del campo específico de  la base de datos */
   showComida() {
     this.db.collection('Comida').snapshotChanges().subscribe(data => {
       this.comida = data.map(e => {
@@ -61,6 +62,8 @@ export class SalesPage implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showRopa() {
     this.db.collection('Ropa').snapshotChanges().subscribe(data => {
       this.ropa = data.map(e => {
@@ -80,6 +83,8 @@ export class SalesPage implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showElectric() {
     this.db.collection('Electronicos').snapshotChanges().subscribe(data => {
       this.electric = data.map(e => {
@@ -99,6 +104,8 @@ export class SalesPage implements OnInit {
       }
     });
   }
+    /*Obtiene los datos del campo específico de  la base de datos */
+
   showPape() {
     this.db.collection('Papeleria').snapshotChanges().subscribe(data => {
       this.pape = data.map(e => {

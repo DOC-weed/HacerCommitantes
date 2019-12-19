@@ -20,12 +20,14 @@ import {SubsidiaryPageModule} from './subsidiary.module';
   templateUrl: './subsidiary.page.html',
   styleUrls: ['./subsidiary.page.scss'],
 })
-export class SubsidiaryPage {
-  constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform, public googleMaps: GoogleMaps) { }
- // @ViewChild('map') element;
-/*
-export class subsidiary {@ViewChild('map') element;
+
   
+ // @ViewChild('map') element;
+
+export class SubsidiaryPage {
+  @ViewChild('map') element;
+constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public plt: Platform, public googleMaps: GoogleMaps) { }
+  /*
   constructor(private ModCtrl: ModalController, private NavCtrl: NavController,public googleMaps: GoogleMaps, public plt: Platform) { }
   ngOnInit() {
   }
@@ -43,8 +45,8 @@ export class subsidiary {@ViewChild('map') element;
 back() {
     this.NavCtrl.navigateForward('./sales');
 }
+*/
 
-/*
 initMap(){
 
   let map: GoogleMap = this.googleMaps.create(this.element.nativeElement);

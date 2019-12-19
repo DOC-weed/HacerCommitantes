@@ -37,7 +37,7 @@ prodcomi;
     this.dep = this.Navparam.get('depa');
 
     this.getdatos();
-  }
+  } /*Se obtiene una imagen para guardarla dentro de una etiqueta*/
   getImg(event) {
     this.img = event.target.files[0];
     const input = event.target;
@@ -52,6 +52,7 @@ prodcomi;
     };
     reader.readAsDataURL(input.files[0]);
   }
+  /* Esta parte se usa para obetener los campos s de la base de datos*/
   getdatos() {
     console.log(this.id);
     console.log(this.img);
@@ -66,7 +67,7 @@ prodcomi;
       this.filepath = this.prodcomi.Url;
       });
   }
-
+/* Aqui se actualiza la base de datos con los campos nuevos*/
   up() {
     const fileRef = this.storage.ref(this.filepath);
     const task = this.storage.upload(this.filepath, this.img);
@@ -90,6 +91,7 @@ prodcomi;
     });
     this.dismiss();
   }
+  /*Aqui muestra una alerta que dice que el producto se actualizo*/
   async alertClienteEdit() {
     const alert = await this.AlertCtrl.create({
       message: 'Producto actualizado',
